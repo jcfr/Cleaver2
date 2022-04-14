@@ -164,7 +164,10 @@ OctreeMesherImp::~OctreeMesherImp()
 {
     if(m_tree)
         delete m_tree;
+    // free vertex tracker list
+    m_vertex_tracker.clear();
 
+    // clean up sizing oracle
     if(m_sizing_oracle)
         delete m_sizing_oracle;
 }
@@ -666,6 +669,8 @@ OctreeMesher::OctreeMesher(const cleaver::AbstractScalarField *sizing_field) :
 
 OctreeMesher::~OctreeMesher()
 {
+    // cleanup
+    delete m_pimpl;
 }
 
 void OctreeMesher::setSizingField(const cleaver::AbstractScalarField *sizing_field)

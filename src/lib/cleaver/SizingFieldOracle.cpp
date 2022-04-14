@@ -14,6 +14,13 @@ SizingFieldOracle::SizingFieldOracle(const AbstractScalarField *sizingField, con
         createOctree();
 }
 
+SizingFieldOracle::~SizingFieldOracle()
+{
+  if (m_tree)
+    delete m_tree;
+  m_tree = nullptr;
+}
+
 void recurseCheck1(OTCell *cell, Octree *tree)
 {
     if(!cell->hasChildren())

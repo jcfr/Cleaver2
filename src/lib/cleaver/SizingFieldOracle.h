@@ -50,6 +50,7 @@ class SizingFieldOracle
 {
 public:
     SizingFieldOracle(const AbstractScalarField *sizingField = nullptr, const BoundingBox &bounds = BoundingBox());
+    ~SizingFieldOracle();
 
     void setSizingField(const AbstractScalarField *sizingField);
     void setBoundingBox(const BoundingBox &bounds);

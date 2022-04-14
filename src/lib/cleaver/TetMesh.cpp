@@ -120,6 +120,7 @@ namespace cleaver
     faces.clear();
     tets.clear();
     halfFaces.clear();
+    halfEdges.clear();
   }
 
   void TetMesh::computeBounds()
